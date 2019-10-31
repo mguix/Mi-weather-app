@@ -1,0 +1,107 @@
+body {
+  font-family: "Be Vietnam", sans-serif;
+}
+h1,
+h2,
+p {
+  text-align: center;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 80px;
+  margin-bottom: 50px;
+  margin-top: 10px;
+  padding-left: 30px;
+  font-weight: 900;
+  color: dimgrey;
+}
+h2 {
+  font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  color: dimgrey;
+}
+p {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 50;
+  margin-top: 0px;
+  color: dimgrey;
+}
+form {
+  margin: 10px;
+  line-height: 20px;
+}
+img {
+  padding-left: 50px;
+  padding-bottom: 20px;
+}
+a {
+  color: #b1bcbf;
+  text-decoration: underline #b1bcbf;
+}
+
+a:hover {
+  color: #b1bcbf;
+  text-decoration: underline #b1bcbf;
+}
+.weather-unit {
+  font-size: 15px;
+  position: relative;
+  top: -40px;
+  margin: 0;
+}
+.wraper {
+  box-shadow: 5px 5px 50px dimgrey;
+  margin: 20px auto 0 20px;
+  border: 0px solid #d4d7dd;
+  border-radius: 5px;
+}
+.col {
+  margin: auto;
+  padding: 5px 0 5px 0;
+  display: block;
+  text-align: center;
+  color: dimgrey;
+}
+.icons {
+  font-size: 40px;
+  position: relative;
+  left: 50px;
+  top: 50px;
+  color: dimgrey;
+}
+#current-forecast {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  border: 1px solid #d4d7dd;
+  border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+#future-forecast {
+  padding: 20px;
+  border: 1px solid #d4d7dd;
+  border-top-color: #d4d7dd;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+#second-day-icon,
+#next-day-icon,
+#third-day-icon,
+#forth-day-icon {
+  font-size: 40px;
+  margin: 0;
+  padding: 0;
+  color: #9ebe46;
+}
+.active {
+  color: dimgray;
+  cursor: default;
+  text-decoration: none;
+}
+.active:hover {
+  text-decoration: none;
+  color: dimgray;
+}

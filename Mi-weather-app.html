@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://kit.fontawesome.com/30e8794a45.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Be+Vietnam:300,300i,400,600,800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Weather Forecast</title>
+    <link href="Mi-weather-app.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="wraper" style="width:400px;">
+      <div class="container" id="current-forecast" style="width:400px;">
+        <div class="icons" id="currentday-icon">
+          <i class="fas fa-sun"></i>
+        </div>
+        <h2>Barcelona</h2>
+        <p>Monday 26, June 2019</p>
+        <h1>
+          <span class="temperature-container" id="temperature">
+            26º
+          </span>
+          <span class="weather-unit">
+            <a href="#" id="celcius">Cº</a> | <a href="#" id="farn">ºF</a>
+          </span>
+        </h1>
+        <img src="illustration1.svg" width="350" />
+      </div>
+      <div class="container" id="future-forecast" style="width:400px;">
+        <form id="city-form">
+          <input type="text" id="city-input" placeholder="Search a city" />
+        </form>
+        <div class="row">
+          <div class="col" id="next-day">Tue</div>
+          <div class="col" id="second-day">Wed</div>
+          <div class="col" id="third-day">Thu</div>
+          <div class="col" id="forth-day">Fri</div>
+        </div>
+        <div class="row">
+          <div class="col" id="next-day-icon">
+            <i class="fas fa-sun" id="icon-sun"></i>
+          </div>
+          <div class="col" id="second-day-icon">
+            <i class="fas fa-cloud-sun"></i>
+          </div>
+          <div class="col" id="third-day-icon">
+            <i class="fas fa-poo-storm"></i>
+          </div>
+          <div class="col" id="forth-day-icon">
+            <i class="fas fa-cloud-sun"></i>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" id="next-day">24º</div>
+          <div class="col" id="second-day">21º</div>
+          <div class="col" id="third-day">19º</div>
+          <div class="col" id="forth-day">20º</div>
+        </div>
+      </div>
+    </div>
+    <script src="Mi-weather-app.js"></script>
+  </body>
+</html>
