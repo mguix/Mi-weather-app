@@ -46,6 +46,7 @@ a:hover {
   color: #b1bcbf;
   text-decoration: underline #b1bcbf;
 }
+
 .weather-unit {
   font-size: 15px;
   position: relative;
@@ -87,6 +88,18 @@ a:hover {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+
+.active {
+  color: dimgray;
+  cursor: default;
+  text-decoration: none;
+}
+
+.active:hover {
+  text-decoration: none;
+  color: dimgray;
+}
+
 #second-day-icon,
 #next-day-icon,
 #third-day-icon,
@@ -96,12 +109,9 @@ a:hover {
   padding: 0;
   color: #9ebe46;
 }
-.active {
-  color: dimgray;
-  cursor: default;
-  text-decoration: none;
-}
-.active:hover {
-  text-decoration: none;
-  color: dimgray;
+
+#weatherIcon {
+  margin-left: 0;
+  padding-left: 0;
+  max-width: 80px;
 }

@@ -75,6 +75,12 @@ function showTemperature(response) {
   temperature.innerHTML = Math.round(response.data.main.temp);
   let city = document.querySelector("#city-name");
   city.innerHTML = response.data.name;
+  let weatherIcon = document.querySelector("#weatherIcon");
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  weatherIcon.setAttribute("alt", response.data.weather[0].description);
 
   let currentDays = [
     "Sun",
