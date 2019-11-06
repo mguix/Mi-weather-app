@@ -36,11 +36,21 @@ if (minutes < 10) {
 
 currentDate.innerHTML = `${hours}:${minutes}  ${day} ${date}, ${month} ${year}`;
 
-function changeCity() {
+function search(searchCity) {
+  let apiKey = "a2df7199551cc39797a0929621d2b43a";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
+
+function changeCity(event) {
+  event.preventDefault();
   let cityInput = document.querySelector("#city-input");
   let h2 = document.querySelector("h2");
   h2.innerHTML = cityInput.value;
+  search(cityInput.value);
 }
+
+search("Barcelona");
 
 let citySubmit = document.querySelector("#city-form");
 citySubmit.addEventListener("submit", changeCity);
@@ -99,9 +109,3 @@ function showTemperature(response) {
     return 0;
   }
 }
-
-let apiKey = "a2df7199551cc39797a0929621d2b43a";
-let searchCity = "Barcelona";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${apiKey}&units=metric`;
-
-axios.get(apiUrl).then(showTemperature);
