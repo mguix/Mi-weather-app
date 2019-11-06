@@ -69,3 +69,15 @@ celciusLink.addEventListener("click", changeToCelcius);
 
 let farnLink = document.querySelector("#farn");
 farnLink.addEventListener("click", changeToFarn);
+
+function showTemperature(response) {
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(response.data.main.temp);
+  let city = document.querySelector("#city-name");
+  city.innerHTML = response.data.name;
+}
+
+let apiKey = "a2df7199551cc39797a0929621d2b43a";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Barcelona&appid=${apiKey}&units=metric`;
+
+axios.get(apiUrl).then(showTemperature);

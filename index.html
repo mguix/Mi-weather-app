@@ -18,8 +18,9 @@
       href="https://fonts.googleapis.com/css?family=Be+Vietnam:300,300i,400,600,800&display=swap"
       rel="stylesheet"
     />
-    <title>Weather Forecast</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Weather Forecast</title>
   </head>
 
   <body>
@@ -28,12 +29,10 @@
         <div class="icons" id="currentday-icon">
           <i class="fas fa-sun"></i>
         </div>
-        <h2>Barcelona</h2>
+        <h2 id="city-name"></h2>
         <p>Monday 26, June 2019</p>
         <h1>
-          <span class="temperature-container" id="temperature">
-            26º
-          </span>
+          <span class="temperature-container" id="temperature"></span>
           <span class="weather-unit">
             <a href="#" id="celcius">Cº</a> | <a href="#" id="farn">ºF</a>
           </span>
