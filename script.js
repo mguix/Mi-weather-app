@@ -75,9 +75,27 @@ function showTemperature(response) {
   temperature.innerHTML = Math.round(response.data.main.temp);
   let city = document.querySelector("#city-name");
   city.innerHTML = response.data.name;
+
+  let currentDays = [
+    "Sun",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  let nextDay = document.querySelector("#next-day");
+  nextDay.innerHTML = currentDays[today.getDay() + 1];
+  let secondDay = document.querySelector("#second-day");
+  secondDay.innerHTML = currentDays[today.getDay() + 4];
+  if (secondDay > 6) {
+    return 0;
+  }
 }
 
 let apiKey = "a2df7199551cc39797a0929621d2b43a";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Barcelona&appid=${apiKey}&units=metric`;
+let searchCity = "Barcelona";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(showTemperature);
