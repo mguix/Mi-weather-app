@@ -39,15 +39,35 @@ currentDate.innerHTML = `${hours}:${minutes}  ${day} ${date}, ${month} ${year}`;
 function showForecast(response) {
   let nextDayTemp = document.querySelector("#next-day-temp");
   nextDayTemp.innerHTML = Math.round(response.data.list[12].main.temp) + "º";
+  let nextDayIcon = document.querySelector("#next-day-icon");
+  nextDayIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.list[12].weather[0].icon}@2x.png`
+  );
 
   let secondDayTemp = document.querySelector("#second-day-temp");
   secondDayTemp.innerHTML = Math.round(response.data.list[20].main.temp) + "º";
+  let secondDayIcon = document.querySelector("#second-day-icon");
+  secondDayIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.list[20].weather[0].icon}@2x.png`
+  );
 
   let thirdDayTemp = document.querySelector("#third-day-temp");
   thirdDayTemp.innerHTML = Math.round(response.data.list[28].main.temp) + "º";
+  let thirdDayIcon = document.querySelector("#third-day-icon");
+  thirdDayIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.list[28].weather[0].icon}@2x.png`
+  );
 
   let forthDayTemp = document.querySelector("#forth-day-temp");
   forthDayTemp.innerHTML = Math.round(response.data.list[36].main.temp) + "º";
+  let forthDayIcon = document.querySelector("#forth-day-icon");
+  forthDayIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.list[36].weather[0].icon}@2x.png`
+  );
 }
 
 function search(searchCity) {

@@ -104,10 +104,11 @@ a:hover {
 #next-day-icon,
 #third-day-icon,
 #forth-day-icon {
-  font-size: 40px;
+  font-size: 50px;
   margin: 0;
   padding: 0;
   color: #9ebe46;
+  max-width: 50px;
 }
 
 #weatherIcon {
