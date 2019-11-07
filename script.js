@@ -36,10 +36,28 @@ if (minutes < 10) {
 
 currentDate.innerHTML = `${hours}:${minutes}  ${day} ${date}, ${month} ${year}`;
 
+function showForecast(response) {
+  let nextDayTemp = document.querySelector("#next-day-temp");
+  nextDayTemp.innerHTML = Math.round(response.data.list[12].main.temp) + "º";
+
+  let secondDayTemp = document.querySelector("#second-day-temp");
+  secondDayTemp.innerHTML = Math.round(response.data.list[20].main.temp) + "º";
+
+  let thirdDayTemp = document.querySelector("#third-day-temp");
+  thirdDayTemp.innerHTML = Math.round(response.data.list[28].main.temp) + "º";
+
+  let forthDayTemp = document.querySelector("#forth-day-temp");
+  forthDayTemp.innerHTML = Math.round(response.data.list[36].main.temp) + "º";
+}
+
 function search(searchCity) {
   let apiKey = "a2df7199551cc39797a0929621d2b43a";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
+
+  let fApiKey = "a2df7199551cc39797a0929621d2b43a";
+  let fApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${searchCity}&appid=${fApiKey}&units=metric`;
+  axios.get(fApiUrl).then(showForecast);
 }
 
 function changeCity(event) {
@@ -50,8 +68,6 @@ function changeCity(event) {
   search(cityInput.value);
 }
 
-search("Barcelona");
-
 let citySubmit = document.querySelector("#city-form");
 citySubmit.addEventListener("submit", changeCity);
 
@@ -61,7 +77,7 @@ function changeToCelcius() {
   celciusLink.classList.add("active");
   let cLink = document.querySelector("#farn");
   cLink.classList.remove("active");
-  temperature.innerHTML = 30;
+  temperature.innerHTML = Math.round(cecliusTemperature);
 }
 
 function changeToFarn(event) {
@@ -71,7 +87,7 @@ function changeToFarn(event) {
   farnLink.classList.add("active");
   let fLink = document.querySelector("#celcius");
   fLink.classList.remove("active");
-  temperature.innerHTML = Math.round(30 * 9) / 5 + 32;
+  temperature.innerHTML = Math.round((cecliusTemperature * 9) / 5 + 32);
 }
 
 let celciusLink = document.querySelector("#celcius");
@@ -80,27 +96,22 @@ celciusLink.addEventListener("click", changeToCelcius);
 let farnLink = document.querySelector("#farn");
 farnLink.addEventListener("click", changeToFarn);
 
+let cecliusTemperature = null;
+
 function showTemperature(response) {
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = Math.round(response.data.main.temp);
   let city = document.querySelector("#city-name");
   city.innerHTML = response.data.name;
   let weatherIcon = document.querySelector("#weatherIcon");
+  cecliusTemperature = response.data.main.temp;
   weatherIcon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
 
-  let currentDays = [
-    "Sun",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-  ];
+  let currentDays = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
   let nextDay = document.querySelector("#next-day");
   nextDay.innerHTML = currentDays[today.getDay() + 1];
   let secondDay = document.querySelector("#second-day");
@@ -109,3 +120,5 @@ function showTemperature(response) {
     return 0;
   }
 }
+
+search("Barcelona");
