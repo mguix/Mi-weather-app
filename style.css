@@ -55,7 +55,7 @@ a:hover {
 }
 .wraper {
   box-shadow: 5px 5px 50px dimgrey;
-  margin: 20px auto 0 20px;
+  margin: 50px 50px 0 50px;
   border: 0px solid #d4d7dd;
   border-radius: 5px;
 }
@@ -72,6 +72,10 @@ a:hover {
   left: 50px;
   top: 50px;
   color: dimgrey;
+}
+.open-source {
+  padding: 25px 70px 70px 60px;
+  text-align: left;
 }
 #current-forecast {
   margin: 0;
